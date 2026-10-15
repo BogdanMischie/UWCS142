@@ -4,11 +4,6 @@ import java.util.Scanner;
 public class MinMaxSort{
 
     public static void main(String[] args){
-        // Use this to order the user inputs in the correct order
-        int largest = Integer.MIN_VALUE;
-        int middle = 0;
-        int smallest = 0;
-        
         // scanner
         Scanner scnr = new Scanner(System.in);
         
@@ -18,12 +13,22 @@ public class MinMaxSort{
         // Record inputs
         String name = scnr.next();
 
-        int num1 = scnr.nextInt();
+        int a = scnr.nextInt();
 
-        int num2 = scnr.nextInt();
+        int b = scnr.nextInt();
 
-        int num3 = scnr.nextInt();
+        int c = scnr.nextInt();
 
+        // Use the given sorting methods to sort the 3 numbers
+        int largest = Math.max(a, Math.max(b, c));
+        int smallest = Math.min(a, Math.min(b, c));
+        int middle = a + b + c - largest - smallest;
+        // print out the numbers
+        System.out.println(largest + " " + middle + " " + smallest);
+        // print out the name
+        System.out.println("Thank you " + name + "!");
+        /* 
+        I read the assignment description and realised that there was a far simpler intended solution ... :(
         // Put into array so we can sort
         int[] arr = {num1,num2,num3};
         // Insetion sort is pretty easy to do and data set isnt too huge so it should work for this
@@ -33,10 +38,10 @@ public class MinMaxSort{
         System.out.printf("%d %d %d\n", arr[2], arr[1], arr[0] );
         // Prints out name
         System.out.println("Thank you " + name + "!");
-
+        */
     }
-
-    public static int[] insertionSort(int[]  arr){
+    /*
+        public static int[] insertionSort(int[]  arr){
         // Compares new nonsorted value to current sorted value
         for (int i = 1; i < arr.length; i++) {
             int current = arr[i];
@@ -53,5 +58,6 @@ public class MinMaxSort{
 
         return arr;
     }
+    */
 
 }
